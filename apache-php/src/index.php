@@ -11,7 +11,7 @@ Flight::route('/', function() {
 Flight::route('/test-db', function () {
     $host = 'db';
     $port = 5432;
-    $dbname = 'mydb';
+    $dbname = 'geobase';
     $user = 'postgres';
     $pass = 'postgres';
 
