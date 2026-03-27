@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Librairie OpenLayers -->
-    <link rel="stylesheet" href="https://unpkg.com/ol/ol.css">
-    <script src="https://unpkg.com/ol/dist/ol.js"></script>
+    <!-- librairie leaflet -->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
     <link rel="stylesheet" href="assets/style.css">
     <title>Home</title>
 </head>
 <body>
-    <div id="entete">
-        {{ toponyme }}
+    <div id="app">
+        {{ mode }}
     </div>
     <div id=map>
     <p></p>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="assets/app.js"></script>
 
     </div>
+    <script src="assets/app.js"></script>
 </body>
 </html>
