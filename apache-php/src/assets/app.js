@@ -19,15 +19,11 @@ Vue.createApp({
     methods: {
         rechercher() {
             markersLayer.clearLayers();
-
+            // appel de l'index pour URL
             fetch('index.php/test-db?nom=' + this.nomRecherche + '&mode=' + this.mode)
             .then(res => res.json())
             .then(data => {
-                
-                if (data.length == 0) {
-                    alert("Aucune ville trouvée !");
-                }
-
+                // ajout des points des villes
                 for (var i = 0; i < data.length; i++) {
                     var ville = data[i];
                     
@@ -39,12 +35,6 @@ Vue.createApp({
                 }
             });
         },
-
-        raccourci(nom, modeChoisi) {
-            this.nomRecherche = nom;
-            this.mode = modeChoisi;
-            this.rechercher();
-        }
     }
 }).mount('#app');
     

@@ -23,7 +23,7 @@ Flight::route('/test-db', function () {
 if ($mode === 'commence par') {
     $rechercheSQL = $recherche . '%';
 } elseif ($mode === 'finit par') {
-    $rechercheSQL = '%' . $rercherche;
+    $rechercheSQL = '%' . $recherche;
 } else {
     $rechercheSQL = '%' . $recherche . '%';
 }
