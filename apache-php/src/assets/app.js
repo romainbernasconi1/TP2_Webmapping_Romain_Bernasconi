@@ -20,7 +20,7 @@ Vue.createApp({
         rechercher() {
             markersLayer.clearLayers();
             // appel de l'index pour URL
-            fetch('index.php/test-db?nom=' + this.nomRecherche + '&mode=' + this.mode)
+            fetch('test-db?nom=' + this.nomRecherche + '&mode=' + this.mode)
             .then(res => res.json())
             .then(data => {
                 // ajout des points des villes
