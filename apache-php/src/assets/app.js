@@ -13,10 +13,39 @@ Vue.createApp({
     data() {
         return {
             mode: 'contient',
-            recherche: '',
+            nomRecherche: '',
         }
     },
-    
+    methods: {
+        rechercher() {
+            markersLayer.clearLayers();
+
+            fetch('index.php/test-db?nom=' + this.nomRecherche + '&mode=' + this.mode)
+            .then(res => res.json())
+            .then(data => {
+                
+                if (data.length == 0) {
+                    alert("Aucune ville trouvée !");
+                }
+
+                for (var i = 0; i < data.length; i++) {
+                    var ville = data[i];
+                    
+                    var monPoint = L.marker([ville.lat, ville.lon]);
+                    
+                    monPoint.bindPopup(ville.nom);
+                    
+                    monPoint.addTo(markersLayer);
+                }
+            });
+        },
+
+        raccourci(nom, modeChoisi) {
+            this.nomRecherche = nom;
+            this.mode = modeChoisi;
+            this.rechercher();
+        }
+    }
 }).mount('#app');
     
 
