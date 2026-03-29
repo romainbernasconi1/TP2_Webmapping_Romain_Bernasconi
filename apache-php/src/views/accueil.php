@@ -35,6 +35,13 @@
             <!-- bouton pour recherche -->
             <button @click="rechercher">Rechercher</button>
         </div>
+        <!-- boutons pour la recherche prédéfinie -->
+        <div class="raccourcis">
+    <p>Recherches thématiques :</p>
+    <button @click="rechercheRapide('heim', 'finit par')">Villes se terminant par heim</button>
+    <button @click="rechercheRapide('ville', 'commence par')">Commence par "Ville"</button>
+    <button @click="rechercheRapide('ac', 'finit par')">Finit par "ac"</button>
+    </div>
     </div>
     <div id=map>
     <p></p>

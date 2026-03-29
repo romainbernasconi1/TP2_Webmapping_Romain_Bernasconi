@@ -17,6 +17,7 @@ Vue.createApp({
         }
     },
     methods: {
+        // recherche principale
         rechercher() {
             markersLayer.clearLayers();
             // appel de l'index pour URL
@@ -25,7 +26,7 @@ Vue.createApp({
             .then(data => {
                 // message si rien n'est trouvé
                     if (data.length === 0) {
-                        alert("Aucune ville ne correspond à votre recherche");
+                        alert("Aucune ville ne correspond à votre recherche...");
                     }
                 // ajout des points des villes
                 for (var i = 0; i < data.length; i++) {
@@ -44,7 +45,11 @@ Vue.createApp({
                 console.error("Erreur de l'api", err);
             });
         },
+        // recherche prédéfinie
+        rechercheRapide(nom, modeChoisi) {
+            this.nomRecherche = nom;
+            this.mode = modeChoisi;
+            this.rechercher();
+        }
     }
 }).mount('#app');
-
-
