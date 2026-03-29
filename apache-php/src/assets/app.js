@@ -32,8 +32,6 @@ Vue.createApp({
                 for (var i = 0; i < data.length; i++) {
                     var ville = data[i];
 
-                    
-                    
                     var monPoint = L.marker([ville.lat, ville.lon]);
                     
                     monPoint.bindPopup(ville.nom);

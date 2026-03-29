@@ -15,12 +15,19 @@
     <!-- css local -->
     <link rel="stylesheet" href="assets/style.css">
     <title>Recherche de villes françaises</title>
+    <!-- J'utilise le bootstrap de twitter -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+
+    <div class="bande-de-api">
+        <h1>GEO-ATLAS</h1>
+    </div>
+
+    <div id="app" class="container mt-2">
  <!-- Barre de recherche -->
         <div id="recherche">
-            <select v-model="mode">
+            <select v-model="mode" class="form-select d-inline-block w-auto">
                 <option value="contient">Contient</option>
                 <option value="commence par">Commence par</option>
                 <option value="finit par">Finit par</option>
@@ -33,14 +40,14 @@
                 @keyup.enter="rechercher"
             />
             <!-- bouton pour recherche -->
-            <button @click="rechercher">Rechercher</button>
+            <button class="btn btn-primary" @click="rechercher">Rechercher</button>
         </div>
         <!-- boutons pour la recherche prédéfinie -->
-        <div class="raccourcis">
+        <div class="raccourcis mt-3 p-3 border rounded bg-light">
     <p>Recherches thématiques :</p>
-    <button @click="rechercheRapide('heim', 'finit par')">Villes se terminant par heim</button>
-    <button @click="rechercheRapide('ville', 'commence par')">Commence par "Ville"</button>
-    <button @click="rechercheRapide('ac', 'finit par')">Finit par "ac"</button>
+    <button class="btn btn-secondary btn-sm" @click="rechercheRapide('heim', 'finit par')">Villes se terminant par heim</button>
+    <button class="btn btn-secondary btn-sm" @click="rechercheRapide('ville', 'commence par')">Commence par "Ville"</button>
+    <button class="btn btn-secondary btn-sm" @click="rechercheRapide('ac', 'finit par')">Finit par "ac"</button>
     </div>
     </div>
     <div id=map>
