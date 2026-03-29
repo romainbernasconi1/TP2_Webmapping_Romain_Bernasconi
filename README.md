@@ -14,7 +14,7 @@ Cette Api permet d'afficher sur une carte la localisation des communes en foncti
 3. Clicker sur rechercher pour afficher les points
 
 ### La recherche thématique
-3 recherches thématiques sont disponibles:
+3 recherches thématiques présélectionnés sont disponibles:
 - Les villes se terminant par "heim"
 - les villes qui commencent par "Ville"
 - les villes qui se terminent par "ac"
