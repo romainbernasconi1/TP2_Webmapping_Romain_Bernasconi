@@ -18,6 +18,7 @@ Cette Api permet d'afficher sur une carte la localisation des communes en foncti
 - Les villes se terminant par "heim"
 - les villes qui commencent par "Ville"
 - les villes qui se terminent par "ac"
+
 Ces 3 recherches thématiques ont pour objectif de démontrer la répartition géographique des villes françaises en fonction de leur suffixe. Nous remarquons ici que les villes se terminant par "heim" se trouvent quasi-exclusivement en Alsace pour des raisons historiques et linguistiques.
 Nous remarquons également que les villes se terminant par "ac" se trouvent en grande partie dans le sud-ouest ainsi qu'en Bretagne tandis que les villes qui commencent par "Ville" sont inexistantes dans cette même région.
 
