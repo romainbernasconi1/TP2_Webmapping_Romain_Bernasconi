@@ -23,9 +23,15 @@ Vue.createApp({
             fetch('test-db?nom=' + this.nomRecherche + '&mode=' + this.mode)
             .then(res => res.json())
             .then(data => {
+                // message si rien n'est trouvé
+                    if (data.length === 0) {
+                        alert("Aucune ville ne correspond à votre recherche");
+                    }
                 // ajout des points des villes
                 for (var i = 0; i < data.length; i++) {
                     var ville = data[i];
+
+                    
                     
                     var monPoint = L.marker([ville.lat, ville.lon]);
                     
@@ -33,10 +39,12 @@ Vue.createApp({
                     
                     monPoint.addTo(markersLayer);
                 }
+            })
+            .catch(err => {
+                console.error("Erreur de l'api", err);
             });
         },
     }
 }).mount('#app');
-    
 
 
