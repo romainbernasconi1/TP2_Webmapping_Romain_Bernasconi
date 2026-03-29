@@ -22,8 +22,8 @@
         <div id="recherche">
             <select v-model="mode">
                 <option value="contient">Contient</option>
-                <option value="commence">Commence par</option>
-                <option value="finit">Finit par</option>
+                <option value="commence par">Commence par</option>
+                <option value="finit par">Finit par</option>
         </select>
 
             <input
