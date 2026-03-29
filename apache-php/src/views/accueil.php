@@ -12,6 +12,7 @@
      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- css local -->
     <link rel="stylesheet" href="assets/style.css">
     <title>Recherche de villes françaises</title>
@@ -44,15 +45,16 @@
         </div>
         <!-- boutons pour la recherche prédéfinie -->
         <div id="raccourcis">
-    <p>Recherches thématiques :</p>
-    <button class="btn btn-secondary btn-sm" @click="rechercheRapide('heim', 'finit par')">Villes se terminant par heim</button>
-    <button class="btn btn-secondary btn-sm" @click="rechercheRapide('ville', 'commence par')">Commence par "Ville"</button>
-    <button class="btn btn-secondary btn-sm" @click="rechercheRapide('ac', 'finit par')">Finit par "ac"</button>
-    </div>
-    </div>
-    <div id="map">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
+            <p>Recherches thématiques :</p>
+            <button class="btn btn-secondary btn-sm" @click="rechercheRapide('heim', 'finit par')">Villes se terminant par heim</button>
+            <button class="btn btn-secondary btn-sm" @click="rechercheRapide('ville', 'commence par')">Commence par "Ville"</button>
+            <button class="btn btn-secondary btn-sm" @click="rechercheRapide('ac', 'finit par')">Finit par "ac"</button>
+        </div>
+        <div id="statistiques" v-if="villesNord > 0 || villesSud > 0">
+            <p>Nord : {{ villesNord }}</p>
+            <p>Sud : {{ villesSud }}</p>
+        </div>
+        <div id="map"></div>
     </div>
     <script src="assets/app.js"></script>
 </body>

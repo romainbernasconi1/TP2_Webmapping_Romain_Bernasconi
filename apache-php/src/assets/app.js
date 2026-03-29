@@ -1,25 +1,34 @@
-// Centrée sur la france métropolitaine
-var map = L.map('map').setView([46.5, 2.5], 6);
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-
-var markersLayer = L.layerGroup().addTo(map);
-
 // vue js
 Vue.createApp({
     data() {
         return {
             mode: 'contient',
             nomRecherche: '',
+            // on ajoute le comptage pour nouvelle fonctionnalité
+            villesNord: 0,
+            villesSud: 0,
         }
+    },
+
+    mounted() {
+    // Centrée sur la france métropolitaine
+        var map = L.map('map').setView([46.5, 2.5], 6);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        markersLayer = L.layerGroup().addTo(map);
     },
     methods: {
         // recherche principale
         rechercher() {
             markersLayer.clearLayers();
+            // on met à 0 pour les villes
+            this.villesNord = 0;
+            this.villesSud = 0;
+
             // appel de l'index pour URL
             fetch('test-db?nom=' + this.nomRecherche + '&mode=' + this.mode)
             .then(res => res.json())
@@ -33,10 +42,15 @@ Vue.createApp({
                     var ville = data[i];
 
                     var monPoint = L.marker([ville.lat, ville.lon]);
-                    
                     monPoint.bindPopup(ville.nom);
-                    
                     monPoint.addTo(markersLayer);
+
+                    // comptage nord sud
+                    if (ville.lat >= 46.5) {
+                            this.villesNord = this.villesNord + 1;
+                        } else {
+                            this.villesSud = this.villesSud + 1;
+                        }
                 }
             })
             .catch(err => {

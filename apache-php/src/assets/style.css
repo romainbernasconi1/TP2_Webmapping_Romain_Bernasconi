@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f8f9fa;
-    margin: 10px;
+    margin: 0;
     padding: 0;
 }
 
@@ -21,7 +21,6 @@ body {
     height: 680px;
     border: 2px solid #333;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(6, 2, 41, 0.2);
 }
 
 #recherche {
@@ -64,4 +63,16 @@ body {
     margin-bottom: 5px;
     border-radius: 3px;
     padding: 6px 12px;
+}
+
+#statistiques {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
