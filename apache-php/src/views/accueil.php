@@ -43,15 +43,14 @@
             <button class="btn btn-primary" @click="rechercher">Rechercher</button>
         </div>
         <!-- boutons pour la recherche prédéfinie -->
-        <div class="raccourcis mt-3 p-3 border rounded bg-light">
+        <div id="raccourcis">
     <p>Recherches thématiques :</p>
     <button class="btn btn-secondary btn-sm" @click="rechercheRapide('heim', 'finit par')">Villes se terminant par heim</button>
     <button class="btn btn-secondary btn-sm" @click="rechercheRapide('ville', 'commence par')">Commence par "Ville"</button>
     <button class="btn btn-secondary btn-sm" @click="rechercheRapide('ac', 'finit par')">Finit par "ac"</button>
     </div>
     </div>
-    <div id=map>
-    <p></p>
+    <div id="map">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     </div>
